@@ -12,6 +12,8 @@ def main():
      choice=  input('enter an option:')
      if choice == '1':
        user_input = input('what item do you want to add:')
+       if user_input.isdigit():
+         user_input= int(user_input)
        shopping_list.append(user_input)
        print(f"you have added {user_input} to shopping list")
        
