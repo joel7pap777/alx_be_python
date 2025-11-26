@@ -3,14 +3,19 @@ from datetime import timedelta
 
 def display_current_datetime():
     current_date = datetime.datetime.now()
-    print(f"the current date and time:{current_date}")
-display_current_datetime()
+    formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")  # required by ALX
+    return formatted_date  # ALX wants RETURN, not print
 
-number_of_days = int(input('enter the number of days to add to the current date:'))
+# Display the formatted date (optional print)
+print(display_current_datetime())
+
+number_of_days = int(input("Enter the number of days to add to the current date: "))
 
 def calculate_future_date():
     now = datetime.date.today()
     future_date = now + timedelta(days=number_of_days)
-    print(future_date)
+    formatted_future = future_date.strftime("%Y-%m-%d")  # required by ALX
+    return formatted_future  # ALX wants RETURN
 
-calculate_future_date()   
+# Print the returned formatted future date
+print(calculate_future_date())
