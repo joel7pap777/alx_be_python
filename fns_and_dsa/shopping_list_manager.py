@@ -6,32 +6,34 @@ def display_menu():
     print("4. Exit")
 
 def main():
-    shopping_list = []
-    while True:
-        display_menu()
-        choice = int(input("Enter your choice: "))   # ALX wants this
-
-        if choice == 1:
-            user_input = input("Enter the item to add: ")   # ALX wants this
-            shopping_list.append(user_input)
-            print(f"You have added {user_input} to the shopping list")
-
-        elif choice == 2:
-            user_input = input("Enter the item to remove: ")
-            if user_input in shopping_list:
-                shopping_list.remove(user_input)
-                print(f"You have removed {user_input} from the shopping list")
-            else:
-                print("Item not found in list.")
-
-        elif choice == 3:
-            print(shopping_list)
-
-        elif choice == 4:
-            print("Good bye!")
-            break
-
-        else:
-            print("Invalid choice. Please try again.")
-
-main()
+ shopping_list = []
+ while True:
+     display_menu()
+     choice=  int(input('enter your choice:'))
+     if choice == 1:
+       user_input = input('nter the item to add:')
+       if user_input.isdigit():
+         user_input= int(user_input)
+       shopping_list.append(user_input)
+       print(f"you have added {user_input} to shopping list")
+       
+     elif choice == 2:
+       user_input = input('what item do you want to remove:')
+       shopping_list.remove(user_input)
+       print(f"you have removed {user_input} from shopping list")
+       
+     elif choice == 3:
+      print(shopping_list)
+     
+     elif choice == 4:
+       print('Good bye!')
+       break
+   
+     else:
+      print('Invalid choice. Please try again.')
+     
+main() 
+    
+    
+             
+    
