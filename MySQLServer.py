@@ -3,11 +3,14 @@
 
 import mysql.connector
 
+db = None
+cursor = None
+
 try:
     db = mysql.connector.connect(
         host="localhost",
         user="root",
-        password=""
+        password="Joel200507$"
     )
     cursor = db.cursor()
     cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
@@ -17,8 +20,8 @@ except mysql.connector.Error as e:
     print("Error while connecting to MySQL", e)
 
 finally:
-    try:
+    if cursor is not None:
         cursor.close()
+    if db is not None:
         db.close()
-    except Exception:
-        pass
+
